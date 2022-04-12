@@ -176,19 +176,20 @@ int main() {
         {
             v = values[2];
             if(lf <= rg)
-				mySTree.updateRange(lf, rg, v);
-			else
-			{
-				mySTree.updateRange(lf, n-1, v);
-				mySTree.updateRange(0,rg, v);
-			}
+		mySTree.updateRange(lf, rg, v);
+	    else
+	    {
+		mySTree.updateRange(lf, n-1, v);
+		mySTree.updateRange(0,rg, v);
+	    }
         }
         else
         {
-            if (lf > rg)
-				cout << min(mySTree.query(lf, n-1), mySTree.query(0, rg)) << endl;
-			else
-				cout << mySTree.query(lf, rg) << endl;
+            if (lf <=  rg)
+		cout << mySTree.query(lf, rg) << endl;
+	    else
+		cout << min(mySTree.query(lf, n-1), mySTree.query(0, rg)) << endl;
+				
         }
         values.clear();
     }
